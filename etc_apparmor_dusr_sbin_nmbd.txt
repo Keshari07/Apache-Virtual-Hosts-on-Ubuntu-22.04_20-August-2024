@@ -1,0 +1,20 @@
+ /etc/apparmor.d/usr.sbin.nmbd
+ 
+#/etc/samba/** r,
+#/var/lib/samba/** rwk,
+#/var/log/samba/** rw,
+#/usr/sbin/nmbd mr,
+
+
+
+
+
+/usr/sbin/nmbd {
+    # Include necessary permissions and paths for nmbd here
+    /etc/samba/** r,
+    /var/log/samba/** rw,
+    /var/lib/samba/** rw,
+    /usr/sbin/nmbd mr
+    ...
+}
+
